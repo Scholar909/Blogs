@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Reads</title>
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">FR</div>
+        <div>
+          <h1 class="site-title">Fresh Reads</h1>
+          <p class="site-tag">Thoughts & Stories Worth Reading</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="#" class="nav-link" id="privacyBtn">Privacy & Policy</a>
+      </nav>
+    </header>
+
+    <!-- Privacy & Policy Slide Panel -->
+    <div class="privacy-overlay" id="privacyPanel">
+      <div class="privacy-content">
+        <button class="close-btn" id="closePrivacy"><i class="uil uil-times"></i></button>
+        <h2>Privacy & Policy</h2>
+        <p>Your privacy matters. Fresh Reads does not collect personal information without consent. 
+        We may use third-party services (like Google AdSense) that place cookies to deliver relevant ads. 
+        By browsing, you agree to standard web practices. You can disable cookies in your browser settings if preferred.</p>
+        <p>We do not sell your data, and all content here is for informational and entertainment purposes only.</p>
+        <p>For questions, please contact us through the About page.</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content">
+      <article class="post fade-in" id="article">
+        <h2>Loading...</h2>
+        <p class="loading">Please wait while we fetch your article...</p>
+      </article>
+
+      <div class="engagement">
+        <button id="likeBtn" class="like-btn" aria-label="Like this post">
+          <i class="uil uil-thumbs-up"></i>
+          Like
+        </button>
+        <span id="likeCount">0</span>
+        <span class="share-hint">• <a href="#" class="share-link">Copy link</a></span>
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-placeholder">[Your Ad Here]</span>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Popular Reads</h3>
+        <p class="muted">Engaging content updated regularly.</p>
+      </div>
+      <div class="card">
+        <h3>Advertisement</h3>
+        <div class="ad-slot"><span class="ad-placeholder">[Ad Slot]</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Fresh Reads. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js.js"></script>
+  <script>
+    // Toggle Privacy Panel
+    const privacyBtn = document.getElementById('privacyBtn');
+    const privacyPanel = document.getElementById('privacyPanel');
+    const closeBtn = document.getElementById('closePrivacy');
+
+    privacyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      privacyPanel.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      privacyPanel.classList.remove('active');
+    });
+
+    // Close if user clicks outside
+    window.addEventListener('click', (e) => {
+      if (e.target === privacyPanel) {
+        privacyPanel.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
