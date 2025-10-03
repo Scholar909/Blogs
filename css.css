@@ -201,9 +201,3 @@ body {
 }
 
 .mobile-ad { display:block; margin:auto; }
-.desktop-ad { display:none; }
-
-@media(min-width:960px) {
-  .mobile-ad { display:none; }
-  .desktop-ad { display:block; margin:auto; }
-}
