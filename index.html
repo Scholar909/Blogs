@@ -30,6 +30,7 @@
     <div class="quick-links">
       <a href="#" class="nav-link" id="aboutBtn">About Us</a>
       <a href="#" class="nav-link" id="contactBtn">Contact Us</a>
+      <a href="#" class="nav-link" id="termsBtn">Terms of Service</a>
     </div>
     
     <div class="ad-slot">
@@ -77,6 +78,28 @@
         <h2>Contact Us</h2>
         <p>If you’d like to reach out, feel free to send an email.</p>
         <p>Email: <span id="emailHolder">[hidden]</span></p>
+      </div>
+    </div>
+    
+    <div class="privacy-overlay" id="termsPanel">
+      <div class="privacy-content">
+        <button class="close-btn" id="closeTerms"><i class="uil uil-times"></i></button>
+        <h2>Terms of Service</h2>
+        <p>Welcome to <strong>Fresh Reads</strong>. By accessing or using this website, you agree to the following terms and conditions.</p>
+    
+        <h3>Use of Content</h3>
+        <p>All stories, articles, and creative writings on this site are for personal reading and enjoyment only. You may share links to our content but not copy or republish it without permission.</p>
+    
+        <h3>Third-Party Services</h3>
+        <p>Fresh Reads uses third-party services such as Google AdSense to display advertisements. These third parties may use cookies to serve relevant ads. We are not responsible for the content of external sites linked or advertised here.</p>
+    
+        <h3>Disclaimer</h3>
+        <p>All information and stories on this website are provided “as is” for general interest and entertainment. While we aim for accuracy and creativity, we make no warranties or guarantees of any kind.</p>
+    
+        <h3>Changes</h3>
+        <p>These terms may be updated occasionally. Continued use of this site means you accept any revisions.</p>
+    
+        <p>For questions, please reach out via our Contact page.</p>
       </div>
     </div>
 
@@ -202,6 +225,26 @@
     
     closeContact.addEventListener('click', () => {
       contactPanel.classList.remove('active');
+    });
+    
+    // === Terms of Service Panel ===
+    const termsBtn = document.getElementById('termsBtn');
+    const termsPanel = document.getElementById('termsPanel');
+    const closeTerms = document.getElementById('closeTerms');
+    
+    termsBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      termsPanel.classList.add('active');
+    });
+    
+    closeTerms.addEventListener('click', () => {
+      termsPanel.classList.remove('active');
+    });
+    
+    window.addEventListener('click', (e) => {
+      if (e.target === termsPanel) {
+        termsPanel.classList.remove('active');
+      }
     });
     
     // Hide email visually but reveal on click (to stop spam bots)
