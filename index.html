@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh Reads offers short stories, thoughts, and creative writing worth reading. Discover inspiring tales and reflections updated weekly.">
+  <meta name="keywords" content="short stories, life lessons, creative writing, reading blog, Fresh Reads">
   <title>Fresh Reads</title>
   <link rel="stylesheet" href="css.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -24,6 +26,11 @@
         <a href="#" class="nav-link" id="privacyBtn">Privacy & Policy</a>
       </nav>
     </header>
+
+    <div class="quick-links">
+      <a href="#" class="nav-link" id="aboutBtn">About Us</a>
+      <a href="#" class="nav-link" id="contactBtn">Contact Us</a>
+    </div>
     
     <div class="ad-slot">
       <div class="ad-container">
@@ -49,6 +56,27 @@
         By browsing, you agree to standard web practices. You can disable cookies in your browser settings if preferred.</p>
         <p>We do not sell your data, and all content here is for informational and entertainment purposes only.</p>
         <p>For questions, please contact us through the About page.</p>
+      </div>
+    </div>
+    
+    <!-- About Us Slide Panel -->
+    <div class="privacy-overlay" id="aboutPanel">
+      <div class="privacy-content">
+        <button class="close-btn" id="closeAbout"><i class="uil uil-times"></i></button>
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Fresh Reads</strong> — a cozy corner for short stories, thoughts, and creative ideas shared from the heart.</p>
+        <p>I write whenever inspiration strikes — from night stories and mini novels to random facts and lessons from everyday life. The goal is simple: to create moments worth reading.</p>
+        <p>Thanks for stopping by and being part of this small creative space!</p>
+      </div>
+    </div>
+    
+    <!-- Contact Us Slide Panel -->
+    <div class="privacy-overlay" id="contactPanel">
+      <div class="privacy-content">
+        <button class="close-btn" id="closeContact"><i class="uil uil-times"></i></button>
+        <h2>Contact Us</h2>
+        <p>If you’d like to reach out, feel free to send an email.</p>
+        <p>Email: <span id="emailHolder">[hidden]</span></p>
       </div>
     </div>
 
@@ -146,6 +174,40 @@
       if (e.target === privacyPanel) {
         privacyPanel.classList.remove('active');
       }
+    });
+    
+    // === About Us Panel ===
+    const aboutBtn = document.getElementById('aboutBtn');
+    const aboutPanel = document.getElementById('aboutPanel');
+    const closeAbout = document.getElementById('closeAbout');
+    
+    aboutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutPanel.classList.add('active');
+    });
+    
+    closeAbout.addEventListener('click', () => {
+      aboutPanel.classList.remove('active');
+    });
+    
+    // === Contact Us Panel ===
+    const contactBtn = document.getElementById('contactBtn');
+    const contactPanel = document.getElementById('contactPanel');
+    const closeContact = document.getElementById('closeContact');
+    
+    contactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      contactPanel.classList.add('active');
+    });
+    
+    closeContact.addEventListener('click', () => {
+      contactPanel.classList.remove('active');
+    });
+    
+    // Hide email visually but reveal on click (to stop spam bots)
+    const emailHolder = document.getElementById('emailHolder');
+    emailHolder.addEventListener('click', () => {
+      emailHolder.textContent = 'skyvfavy15501@gmail.com';
     });
   </script>
 </body>

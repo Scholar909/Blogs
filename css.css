@@ -201,3 +201,42 @@ body {
 }
 
 .mobile-ad { display:block; margin:auto; }
+
+#emailHolder {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* About & Contact buttons inside ad box */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.link-btn {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(6,182,212,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(59,130,246,0.25);
+}
+
+@media (max-width: 600px) {
+  .link-btn {
+    flex: 1 1 45%;
+  }
+}
